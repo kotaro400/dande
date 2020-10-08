@@ -1,0 +1,12 @@
+<% content_for(:title) { '記事一覧' } %>
+
+<div class="articles">
+  <h2 id="search-word">下書き</h2>
+  <div id="res-articles">
+    <%= render "articles/shared/search_results", articles: @articles %>
+  </div>
+</div>
+
+<div class="search-content">
+  <%= render "articles/shared/search_form" %>
+</div>

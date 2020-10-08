@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      article: 記事
+      owner: 管理者
+    attributes:
+      article:
+        title: タイトル
+        for_engineer: For Engineer
+        for_designer: For Designer
+        image: サムネイル
+        public: 公開する
+      owner:
+        uid: コード
+        password: パスワード

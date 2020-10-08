@@ -1,0 +1,5 @@
+<% content_for(:title) { '記事編集' } %>
+
+<%= render "articles/shared/editor", article: @article %>
+
+<%= javascript_pack_tag "articles/edit" %>

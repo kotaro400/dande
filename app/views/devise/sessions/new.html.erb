@@ -1,0 +1,21 @@
+<% content_for(:title) { 'ログイン' } %>
+
+<div class="owner-signin">
+  <%= image_tag "white-logo" %>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <h2>ログイン</h2>
+
+    <div class="field">
+      <%= f.text_field :uid, placeholder: "コード" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, placeholder: "パスワード" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "ログインする" %>
+    </div>
+  <% end %>
+</div>

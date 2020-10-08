@@ -1,0 +1,16 @@
+<% if current_owner %>
+  <%= image_tag "plus", id: "plus-btn" %>
+  <div id="owner-menu">
+    <%= link_to new_article_path do %>
+      <%= image_tag "new-article", id: "new-article-link" %>
+      <span id="new-article-link-span">新規記事を作成</span>
+    <% end %>
+    <%= link_to draft_articles_path do %>
+      <%= image_tag "draft", id: "draft-link" %>
+      <span id="draft-link-span">下書きをみる</span>
+    <% end %>
+    <%= image_tag "close-menu", id: "close-menu" %>
+  </div>
+
+  <%= javascript_pack_tag "owner_menu" %>
+<% end %>

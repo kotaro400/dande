@@ -1,0 +1,264 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#article-search{
+  width: 310px;
+  margin-top: 50px;
+  display: none;
+
+  form{
+    input[type="text"]{
+      width: 310px;
+      background-color: #f2f2f2;
+      border-radius: 20px;
+      padding: 10px 15px;
+    }
+
+    input[type="submit"]{
+      display: block;
+      width: 50px;
+      margin: 10px auto;
+      font-size: 14px;
+    }
+  }
+
+  #res-articles{
+    margin-top: 50px;
+  }
+}
+
+.article{
+  width: 660px;
+  margin-bottom: 50px;
+
+  img{
+    width: 650px;
+    height: 360px;
+    object-fit: cover;
+  }
+
+  .thumbnail{
+    margin-top: 90px;
+  }
+
+  .article-title{
+    width: 660px;
+    margin: 30px auto 80px auto;
+    font-size: 30px;
+    line-height: 1.5;
+  }
+}
+
+
+#idx-wrapper{
+  width: 310px;
+
+  #idx{
+    position: fixed;
+    width: 310px;
+    top: 180px;
+
+    span{
+      position: absolute;
+      right: 0;
+    }
+
+    ul{
+      padding: 0;
+
+      li{
+        border-bottom: 1px solid #E5E5E5;
+        padding: 5px 0;
+      }
+    }
+  }
+}
+
+.res-article{
+  img{
+    width: 310px;
+    height: 170px;
+    object-fit: cover;
+  }
+}
+
+#preview-article{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+
+  .preview-links{
+    width: 300px;
+    margin-top: 100px;
+
+    a, span{
+      display: block;
+      width: 130px;
+      text-align: center;
+      margin: 30px auto;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+    }
+  }
+}
+
+.articles{
+  width: 660px;
+  margin-top: 50px;
+
+  label{
+    margin-right: 15px;
+  }
+
+  input[type="submit"]{
+    padding: 3px 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }
+
+  h2{
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+
+  #res-articles{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    .res-article{
+      width: 310px;
+      margin: 25px 0;
+
+      p{
+        font-weight: 700;
+      }
+
+      span{
+        font-size: 10px;
+        background-color: #f2f2f2;
+        padding: 4px 7px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.search-content{
+  width: 310px;
+
+  #close-search{
+    display: none;
+  }
+
+  .mobile-search-logo{
+    display: none;
+  }
+
+  #article-search{
+    display: block;
+  }
+}
+
+@media screen and (max-width:768px){
+  .search-content{
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    top: 0;
+    min-height: 100%;
+    text-align: center;
+
+    #close-search{
+      display: block;
+      position: absolute;
+      top: 24px;
+      right: 10px;
+      font-size: 24px;
+    }
+
+    .mobile-search-logo{
+      display: inline-block;
+      width: 90px;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    #article-search{
+      width: 100%;
+
+      form{
+        text-align: center;
+        width: 100%;
+        margin-top: 50px;
+      }
+    }
+  }
+
+  .articles{
+    width: 310px;
+    margin: 50px auto;
+
+    h2{
+      margin-bottom: 15px;
+    }
+
+    #res-articles{
+      .res-article{
+        width: 310px;
+        margin: 25px auto;
+      }
+    }
+  }
+
+  .article{
+    width: 100%;
+    margin: 45px auto;
+
+    img{
+      display: block;
+      width: 310px;
+      height: 170px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .thumbnail{
+      margin-top: 45px;
+    }
+
+    .article-title{
+      width: 310px;
+      font-size: 24px;
+      line-height: 36px;
+      margin: 25px auto;
+    }
+  }
+
+  #idx-wrapper{
+    display: none;
+    position: fixed;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 260px);
+    background-color: rgba(198, 198, 198, 0.5);
+
+    #idx{
+      margin-left: calc(100vw - 260px);
+      width: 260px;
+      background-color: #fff;
+      min-height: 100%;
+      top: 0;
+      padding: 100px 0 0 20px;
+
+      span{
+        top: 25px;
+        right: 30px;
+        font-size: 20px;
+      }
+    }
+  }
+}

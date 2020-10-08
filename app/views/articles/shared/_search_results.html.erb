@@ -1,0 +1,14 @@
+<% articles.each do |article| %>
+  <div class="res-article">
+    <%= link_to article do %>
+      <%= image_tag article.image %>
+      <p><%= article.title %></p>
+      <% if article.for_engineer %>
+        <span>Engineer</span>
+      <% end %>
+      <% if article.for_designer %>
+        <span>Designer</span>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

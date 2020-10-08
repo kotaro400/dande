@@ -1,0 +1,13 @@
+<% content_for(:title) { @article.title } %>
+
+<%= render "articles/shared/article", article: @article %>
+
+<div id="idx-wrapper">
+  <div id="idx">
+    <span id="close-idx">×</span>
+    <h4>目次</h4>
+  </div>
+</div>
+
+<%= javascript_pack_tag "articles/highlight" %>
+<%= javascript_pack_tag "articles/index" %>

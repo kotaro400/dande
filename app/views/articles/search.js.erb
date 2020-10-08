@@ -1,0 +1,22 @@
+var res = document.getElementById("res-articles")
+
+res.innerHTML = ""
+
+if (location.pathname === "/articles/new" || location.pathname.match(/\/articles\/.*\/edit/)) {
+  res.insertAdjacentHTML('beforeend',
+    '<%= j(render "articles/shared/search_results_for_embed", articles: @articles) %>'
+  )
+} else {
+  res.insertAdjacentHTML('beforeend',
+    '<%= j(render "articles/shared/search_results", articles: @articles) %>'
+  )
+  <% if @word.present? %>
+    document.getElementById("search-word").textContent = "<%= @word %>"
+  <% end %>
+
+  if (window.matchMedia && window.matchMedia('(max-device-width: 768px)').matches) {
+    document.getElementsByClassName("search-content")[0].style.display = "none"
+
+    document.getElementsByClassName("articles")[0].style.display = "block"
+  }
+}

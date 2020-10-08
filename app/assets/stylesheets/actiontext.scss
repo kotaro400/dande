@@ -1,0 +1,209 @@
+//
+// Provides a drop-in pointer for the default Trix stylesheet that will format the toolbar and
+// the trix-editor content (whether displayed or under editing). Feel free to incorporate this
+// inclusion directly in any other asset bundle and remove this file.
+//
+//= require trix/dist/trix
+
+// We need to override trix.css’s image gallery styles to accommodate the
+// <action-text-attachment> element we wrap around attachments. Otherwise,
+// images in galleries will be squished by the max-width: 33%; rule.
+.article-form{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 100%;
+
+  .left-content{
+    text-align: center;
+    width: 660px;
+    position: relative;
+
+    .trix-field{
+      text-align: left;
+      width: 100%;
+      margin: 150px auto 50px auto;
+
+      #add-article{
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid #333;
+        z-index: 10;
+        position: fixed;
+        top: 190px;
+        background-color: #fff;
+      }
+
+      trix-toolbar{
+        position: fixed;
+        top: 150px;
+        z-index: 10;
+
+        button{
+          background-color: #fff;
+        }
+      }
+
+      #article_content{
+        min-height: 360px;
+        margin-top: 60px;
+
+        img{
+          z-index: -1;
+        }
+      }
+    }
+
+    input[type="submit"]{
+      color: #fff;
+      background-color: #333;
+      font-size: 18px;
+      text-align: center;
+      padding: 8px 22px;
+      border-radius: 5px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .right-content{
+    width: 310px;
+    margin-top: 50px;
+
+    .prev-contents{
+      text-align: center;
+      width: 310px;
+      height: 170px;
+      background-color: rgba(229, 229, 229, 0.5);
+      opacity: 0.5;
+
+      .prev-image{
+        width: 310px;
+        height: 170px;
+        object-fit: cover;
+      }
+
+      .hidden-file{
+        display: none;
+      }
+    }
+
+
+    .right-field{
+      margin: 30px auto;
+
+      label{
+        display: block;
+      }
+
+      textarea{
+        background-color: #f2f2f2;
+        padding: 8px;
+        width: 100%;
+      }
+
+      #left-space{
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.trix-content {
+  width: 650px;
+  margin: 0 auto;
+
+  h1{
+    font-size: 24px;
+    line-height: 1.75;
+    font-weight: 700;
+    margin: 50px 0 -18px 0;
+  }
+
+  p{
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 400;
+    margin: 36px 0 0 0;
+  }
+
+  a{
+    color: #2893ff;
+    margin: 36px 0 0 0;
+  }
+
+  img{
+    display: block;
+    margin: 36px 0 0 0;
+  }
+
+  pre{
+    background-color: #333;
+    font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 36px 0 0 0;
+  }
+
+  .attachment__caption {
+    display: none;
+  }
+
+  .attachment__toolbar{
+    display: none;
+  }
+
+  .attachment--preview{
+    text-align: left;
+  }
+
+  .attachment-gallery {
+    > action-text-attachment,
+    > .attachment {
+      flex: 1 0 33%;
+      padding: 0 0.5em;
+      max-width: 33%;
+    }
+
+    &.attachment-gallery--2,
+    &.attachment-gallery--4 {
+      > action-text-attachment,
+      > .attachment {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+    }
+  }
+
+  action-text-attachment {
+    .attachment {
+      padding: 0 !important;
+      max-width: 100% !important;
+    }
+  }
+}
+
+@media screen and (max-width:768px){
+  .trix-content{
+    width: 310px;
+
+    h1{
+      font-size: 20px;
+      line-height: 1.75;
+      margin: 36px 0 -20px 0;
+    }
+
+    p{
+      font-size: 16px;
+      line-height: 30px;
+      margin: 30px 0 0 0;
+    }
+
+    pre{
+      font-size: 12px;
+    }
+  }
+}

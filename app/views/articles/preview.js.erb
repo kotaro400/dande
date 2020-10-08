@@ -1,0 +1,19 @@
+var trixForm = document.getElementsByClassName("article-form")[0]
+var searchForm = document.getElementById("article-search")
+
+trixForm.style.display = "none"
+searchForm.style.display = "none"
+
+document.getElementsByClassName("columns-wrapper")[0].insertAdjacentHTML('beforeend',
+  '<%= j(render "articles/shared/preview", article: @article) %>'
+)
+
+var back = document.getElementById("preview-back")
+var preview = document.getElementById("preview-article")
+
+
+back.addEventListener("click", function(){
+  trixForm.style.display = "flex"
+  searchForm.style.display = "block"
+  preview.remove()
+})

@@ -1,0 +1,41 @@
+.owner-signin{
+  background-image: url("/background.png");
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+
+  img{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  form{
+    width: 50%;
+    color: #fff;
+    text-align: center;
+    margin-top: 250px;
+
+    h2{
+      color: #fff;
+      font-size: 36px;
+    }
+
+    input{
+      font-size: 18px;
+      padding: 10px;
+      width: 70%;
+      margin: 25px auto;
+      border-radius: 5px;
+    }
+
+    input[type="submit"]{
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: 1px solid #fff;
+      width: 30%;
+    }
+  }
+}

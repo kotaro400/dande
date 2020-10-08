@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+html, body, h1, h2, h4, p, input{
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans JP';
+  color: #333;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #333;
+}
+
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: inherit;
+}
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration {
+  display: none;
+}
+input[type="submit"]::focus,
+input[type="button"]::focus {
+  outline-offset: -2px;
+}
+
+input,textarea {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-appearance: none;
+  max-width: 100%;
+  border: none;
+}
+
+input[type="checkbox"]{
+  -webkit-appearance: auto;
+}
+
+
+.columns-wrapper{
+  width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.error-messages{
+  color: #ff4747;
+}
+
+.top-features{
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 3px;
+  width: 100%;
+
+  img{
+    display: block;
+    width: calc(100% / 3);
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width:768px){
+  .top-features{
+    flex-flow: row wrap;
+
+    img{
+      width: 50%;
+    }
+
+    .first-features{
+      width: 100%;
+    }
+  }
+
+  .columns-wrapper{
+    width: 100%;
+    display: block;
+  }
+}

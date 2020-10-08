@@ -1,0 +1,57 @@
+<%= form_with model: article, class: "article-form", local: true do |form| %>
+  <div class="left-content">
+    <div class="trix-field">
+      <span id="add-article">記事を追加</span>
+      <%= form.rich_text_area :content %>
+    </div>
+
+    <%= form.submit "保存" %>
+  </div>
+
+  <div class="right-content">
+    <% if article.errors.any? %>
+      <ul class="error-messages">
+        <% article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <div id="default-right-content">
+      <%= form.label :image %>
+      <%= form.label :image, class: "image-label" do %>
+        <div class="prev-contents">
+          <% if article.image.attached? %>
+            <div class="prev-content">
+              <%= image_tag article.image.variant(resize: "310x170"), class: "prev-image" %>
+            </div>
+          <% end %>
+          <%= form.file_field :image, accept: 'image/*', class: "hidden-file" %>
+        </div>
+      <% end %>
+
+      <div class="right-field">
+        <%= form.label :title %>
+        <%= form.text_area :title, placeholder: "タイトルを入力してください", rows: 3 %>
+      </div>
+
+      <div class="right-field">
+        <%= form.label "読み手" %>
+        <%= form.check_box :for_engineer, {}, true, false %>
+        <span>For Engineer</span>
+        <%= form.check_box :for_designer, {id: "left-space"}, true, false %>
+        <span>For Designer</span>
+      </div>
+
+      <div class="right-field">
+        <%= form.check_box :public, {}, true, false %>
+        <span>公開する</span>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render "articles/shared/search_form" %>
+
+<%= javascript_pack_tag "articles/search" %>
+<%= javascript_pack_tag "articles/trix" %>
+<%= javascript_pack_tag "imageUploader" %>

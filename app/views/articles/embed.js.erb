@@ -1,0 +1,13 @@
+var content = document.getElementById("article_content")
+
+content.insertAdjacentHTML('beforeend',
+  '<%= j(link_to @article.title, @article) %>'
+)
+
+var trixForm = document.getElementsByClassName("article-form")[0]
+var searchForm = document.getElementById("article-search")
+var preview = document.getElementById("preview-article")
+
+trixForm.style.display = "flex"
+searchForm.style.display = "block"
+preview.remove()

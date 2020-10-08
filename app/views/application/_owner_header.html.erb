@@ -1,0 +1,18 @@
+<header class="owner-header">
+  <div class="header-logo">
+    <%= link_to destroy_owner_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
+      <%= image_tag "white-logo" %>
+    <% end %>
+  </div>
+  <div class="header-links">
+    <%= link_to "About", root_path %>
+    <%= link_to "New", root_path %>
+    <%= link_to "Feature", root_path %>
+  </div>
+  <% if controller_name == "articles" && action_name == "show" %>
+    <div class="edit-links">
+      <%= link_to "この記事を編集", edit_article_path(@article), data: {turbolinks: false} %>
+      <%= link_to "×", article_path(@article), method: :delete, id: "destroy-article-link", data: {confirm: "削除しますか？"} %>
+    </div>
+  <% end %>
+</header>
