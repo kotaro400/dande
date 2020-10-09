@@ -96,6 +96,11 @@
         display: block;
       }
 
+      input[type="checkbox"]{
+        -webkit-appearance: checkbox;
+        display: inline-block;
+      }
+
       textarea{
         background-color: #f2f2f2;
         padding: 8px;

@@ -59,9 +59,9 @@ input,textarea {
 }
 
 input[type="checkbox"]{
-  -webkit-appearance: checkbox;
+  -webkit-appearance: none;
+  display: none;
 }
-
 
 .columns-wrapper{
   width: 1050px;
