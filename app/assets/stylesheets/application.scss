@@ -59,7 +59,7 @@ input,textarea {
 }
 
 input[type="checkbox"]{
-  -webkit-appearance: auto;
+  -webkit-appearance: checkbox;
 }
 
 
@@ -84,6 +84,7 @@ input[type="checkbox"]{
   img{
     display: block;
     width: calc(100% / 3);
+    height: calc(100vw / 9 * 2);
     object-fit: cover;
   }
 }
@@ -94,10 +95,12 @@ input[type="checkbox"]{
 
     img{
       width: 50%;
+      height: calc(50vw / 3 * 2);
     }
 
     .first-features{
       width: 100%;
+      height: calc(100vw / 3 * 2);
     }
   }
 

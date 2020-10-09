@@ -32,7 +32,7 @@ close.addEventListener("click", function(){
   document.getElementById("idx-wrapper").style.display = "none"
 })
 
-if (window.matchMedia && window.matchMedia('(max-device-width: 768px)').matches) {
+if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
   const hamburger = document.getElementById("hamburger")
 
   hamburger.addEventListener("click", function(){

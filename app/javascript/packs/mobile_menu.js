@@ -1,4 +1,4 @@
-if (window.matchMedia && window.matchMedia('(max-device-width: 768px)').matches) {
+if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
   const hamburger = document.getElementById("hamburger")
   const closeSearch = document.getElementById("close-search")
 

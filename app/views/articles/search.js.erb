@@ -14,7 +14,7 @@ if (location.pathname === "/articles/new" || location.pathname.match(/\/articles
     document.getElementById("search-word").textContent = "<%= @word %>"
   <% end %>
 
-  if (window.matchMedia && window.matchMedia('(max-device-width: 768px)').matches) {
+  if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
     document.getElementsByClassName("search-content")[0].style.display = "none"
 
     document.getElementsByClassName("articles")[0].style.display = "block"
