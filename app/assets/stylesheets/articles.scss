@@ -130,7 +130,7 @@
     top: 50%;
     width: 16px;
   }
-  
+
   label::after {
     border-right: 3px solid #333;
     border-bottom: 3px solid #333;
@@ -297,6 +297,12 @@
         top: 25px;
         right: 30px;
         font-size: 20px;
+      }
+
+      ul{
+        li{
+          padding: 5px 10px;
+        }
       }
     }
   }

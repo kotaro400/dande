@@ -8,32 +8,22 @@
 #owner-menu{
   display: none;
   position: fixed;
-  right: 120px;
+  right: 20px;
   bottom: 45px;
+  width: 150px;
 
-  #new-article-link{
-    position: fixed;
-    right: 120px;
-    bottom: 165px;
-  }
+  a{
+    display: block;
+    margin-bottom: 15px;
+    position: relative;
 
-  #new-article-link-span{
-    position: fixed;
-    right: 35px;
-    bottom: 175px;
-    font-size: 10px;
-  }
-
-  #draft-link{
-    position: fixed;
-    right: 120px;
-    bottom: 115px;
-  }
-
-  #draft-link-span{
-    position: fixed;
-    right: 35px;
-    bottom: 125px;
-    font-size: 10px;
+    span{
+      font-size: 10px;
+      line-height: 40px;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 50px;
+    }
   }
 }
