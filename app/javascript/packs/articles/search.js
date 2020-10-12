@@ -11,6 +11,9 @@ add.addEventListener("click", function(){
       document.getElementById("add-article").textContent = "記事を追加"
       break;
     case "記事を追加":
+      if (document.getElementById("tag-search")) {
+        document.getElementById("tag-search").remove()
+      }
       right.style.display = "none"
       form.style.display = "block"
       document.getElementById("add-article").textContent = "もどる"

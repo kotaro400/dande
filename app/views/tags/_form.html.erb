@@ -1,0 +1,14 @@
+<div id="tag-search">
+  <%= form_with url: search_tags_path, method: :get do |form| %>
+    <%= form.text_field :word, placeholder: "タグをさがす" %>
+    <%= form.submit "検索" %>
+  <% end %>
+
+  <div id="res-tags">
+  </div>
+
+  <%= form_with model: tag do |form| %>
+    <%= form.text_field :name, placeholder: "新規タグを追加" %>
+    <%= form.submit "追加" %>
+  <% end %>
+</div>

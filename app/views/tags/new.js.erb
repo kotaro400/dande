@@ -1,0 +1,5 @@
+document.getElementsByClassName("right-content")[0].style.display = "none"
+
+document.getElementsByClassName("columns-wrapper")[0].insertAdjacentHTML("beforeend",
+  '<%= j(render "tags/form", tag: @tag) %>'
+)

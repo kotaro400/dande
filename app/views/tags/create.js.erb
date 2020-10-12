@@ -1,0 +1,15 @@
+document.getElementsByClassName("right-content")[0].style.display = "block"
+
+document.getElementById("tag-search").remove()
+
+document.getElementById("added-tags").insertAdjacentHTML("beforeend",
+  '<%= j(render "tags/added_tag", tag: @tag) %>'
+)
+
+var tags = document.querySelectorAll(".delete-tag")
+
+tags.forEach(element => {
+  element.addEventListener("click", function(){
+    element.parentNode.parentNode.remove()
+  })
+})

@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.on_public
+    @tags = Tag.all
   end
 
   def show
@@ -15,10 +16,12 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @tags = Tag.all
   end
 
   def create
     @article = Article.new(article_params)
+    @article.tags = Tag.where(id: params[:tags].map{|id| id.to_i })
     if @article.save
       redirect_to articles_path
     else
@@ -32,6 +35,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
+    @article.tags = Tag.where(id: params[:tags].map{|id| id.to_i })
     if @article.update(article_params)
       redirect_to articles_path
     else
@@ -60,6 +64,9 @@ class ArticlesController < ApplicationController
       @articles = Article.for_engineer
     elsif params[:for_designer]
       @articles = Article.for_designer
+    elsif params[:tag]
+      @articles = Tag.find_by(name: params[:tag]).articles
+      @word = params[:tag]
     else
       @articles = Article.on_public
     end

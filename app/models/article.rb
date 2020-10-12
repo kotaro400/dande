@@ -2,6 +2,9 @@ class Article < ApplicationRecord
   has_rich_text :content
   has_one_attached :image
 
+  has_many :article_tags, dependent: :destroy
+  has_many :tags, through: :article_tags
+
   validates :title, presence: true
   validate :image_presence
 

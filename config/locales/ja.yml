@@ -3,6 +3,7 @@ ja:
     models:
       article: 記事
       owner: 管理者
+      tag: タグ
     attributes:
       article:
         title: タイトル
@@ -13,3 +14,5 @@ ja:
       owner:
         uid: コード
         password: パスワード
+      tag:
+        name: タグ名

@@ -1,3 +1,64 @@
 // Place all the styles related to the tags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#tag-search{
+  margin-top: 100px;
+
+  form{
+    text-align: center;
+
+    input[type="text"]{
+      width: 310px;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 10px 20px;
+    }
+
+    input[type="submit"]{
+      margin-top: 20px;
+    }
+  }
+
+  #res-tags{
+    margin-bottom: 100px;
+    margin-top: 20px;
+
+    .res-tag{
+      display: inline-block;
+      font-size: 10px;
+      background-color: #f2f2f2;
+      padding: 5px;
+      border-radius: 5px;
+      margin-right: 5px;
+    }
+  }
+}
+
+#added-tags{
+  .added-tag-wrapper{
+    display: inline-block;
+
+    .added-tag{
+      display: inline-block;
+      font-size: 10px;
+      background-color: #f2f2f2;
+      padding: 5px;
+      border-radius: 5px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.top-tags{
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  .top-tag{
+    display: inline-block;
+    font-size: 10px;
+    background-color: #f2f2f2;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+}

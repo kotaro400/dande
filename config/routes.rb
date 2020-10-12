@@ -16,5 +16,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :tags do
+    collection do
+      get :search
+    end
+  end
+
   root "articles#index"
 end

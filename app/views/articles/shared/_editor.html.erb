@@ -9,13 +9,7 @@
   </div>
 
   <div class="right-content">
-    <% if article.errors.any? %>
-      <ul class="error-messages">
-        <% article.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    <% end %>
+    <%= render "application/error_messages", resource: article %>
     <div id="default-right-content">
       <%= form.label :image %>
       <%= form.label :image, class: "image-label" do %>
@@ -46,6 +40,17 @@
         <%= form.check_box :public, {}, true, false %>
         <span>公開する</span>
       </div>
+
+      <div class="right-field">
+        <%= form.label "タグの追加" %>
+        <%= link_to "タグを追加する", new_tag_path, remote: true, id: "new-tag-link" %>
+      </div>
+
+      <div id="added-tags">
+        <% article.tags.each do |tag| %>
+          <%= render "tags/added_tag", tag: tag %>
+        <% end %>
+      </div>
     </div>
   </div>
 <% end %>
@@ -55,3 +60,4 @@
 <%= javascript_pack_tag "articles/search" %>
 <%= javascript_pack_tag "articles/trix" %>
 <%= javascript_pack_tag "imageUploader" %>
+<%= javascript_pack_tag "tags/editor" %>
