@@ -1,0 +1,50 @@
+<%= form_with model: @feature, class: "article-form", local: true do |form| %>
+  <div class="feature-show">
+    <h1><%= @feature.title %></h1>
+
+    <p class="feature-details"><%= simple_format(@feature.details) %></p>
+
+    <div class="feature-articles">
+      <%= render "articles/shared/search_results", articles: @feature.articles %>
+    </div>
+  </div>
+
+  <div class="right-content feature-right-content">
+    <%= render "application/error_messages", resource: @feature %>
+    <div id="default-right-content">
+      <%= form.label :image %>
+      <%= form.label :image, class: "image-label" do %>
+        <div class="prev-contents">
+          <% if @feature.image.attached? %>
+            <div class="prev-content">
+              <%= image_tag @feature.image.variant(resize: "310x170"), class: "prev-image" %>
+            </div>
+          <% end %>
+          <%= form.file_field :image, accept: 'image/*', class: "hidden-file" %>
+        </div>
+      <% end %>
+
+      <div class="right-field">
+        <%= form.label :title %>
+        <%= form.text_area :title, placeholder: "タイトルを入力してください", rows: 3 %>
+      </div>
+
+      <div class="right-field">
+        <%= form.label :details %>
+        <%= form.text_area :details, placeholder: "どういう特集ですか？", rows: 5 %>
+      </div>
+
+      <div class="right-field">
+        <%= form.label "読み手" %>
+        <%= form.check_box :for_engineer, {}, true, false %>
+        <span>For Engineer</span>
+        <%= form.check_box :for_designer, {id: "left-space"}, true, false %>
+        <span>For Designer</span>
+      </div>
+    </div>
+
+    <%= form.submit "公開", class: "feature-submit" %>
+  </div>
+<% end %>
+
+<%= javascript_pack_tag "imageUploader" %>

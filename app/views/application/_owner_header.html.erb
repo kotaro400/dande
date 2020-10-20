@@ -7,12 +7,18 @@
   <div class="header-links">
     <%= link_to "About", root_path %>
     <%= link_to "New", root_path %>
-    <%= link_to "Feature", root_path %>
+    <%= link_to "Feature", features_path %>
   </div>
   <% if controller_name == "articles" && action_name == "show" %>
     <div class="edit-links">
       <%= link_to "この記事を編集", edit_article_path(@article), data: {turbolinks: false} %>
       <%= link_to "×", article_path(@article), method: :delete, id: "destroy-article-link", data: {confirm: "削除しますか？"} %>
+    </div>
+  <% end %>
+
+  <% if controller_name == "features" && action_name == "show" %>
+    <div class="edit-links">
+      <%= link_to "この特集を編集", edit_feature_path(@feature), data: {turbolinks: false} %>
     </div>
   <% end %>
 </header>

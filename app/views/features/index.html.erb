@@ -1,0 +1,20 @@
+<div class="features-wrapper">
+  <h1>Feature</h1>
+
+  <div class="features">
+    <% @features.each do |feature| %>
+      <%= link_to feature do %>
+        <div class="feature">
+          <%= image_tag feature.image %>
+
+          <div class="title-and-details">
+            <h2><%= feature.title %></h2>
+            <p><%= feature.details %></p>
+          </div>
+        </div>
+
+        <%= render "feature_card", feature: feature %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

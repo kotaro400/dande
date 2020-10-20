@@ -21,7 +21,8 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.tags = Tag.where(id: params[:tags].map{|id| id.to_i })
+    @article.tags = Tag.where(id: params[:tags]&.map{|id| id.to_i })
+    @article.feature = Feature.find_by(id: params[:article][:feature].to_i)
     if @article.save
       redirect_to articles_path
     else
@@ -36,7 +37,8 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.tags = Tag.where(id: params[:tags].map{|id| id.to_i })
+    @article.tags = Tag.where(id: params[:tags]&.map{|id| id.to_i })
+    @article.feature = Feature.find_by(id: params[:article][:feature].to_i)
     if @article.update(article_params)
       redirect_to articles_path
     else
@@ -46,8 +48,8 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy
     @article.image.purge
+    @article.destroy
     redirect_to root_path
   end
 

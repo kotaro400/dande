@@ -1,0 +1,146 @@
+// Place all the styles related to the features controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.new-feature-p{
+  font-size: 24px;
+  margin-top: 50px;
+  text-align: left;
+}
+
+
+.feature-right-content{
+  .feature-submit{
+    color: #fff;
+    background-color: #333;
+    font-size: 18px;
+    text-align: center;
+    padding: 8px;
+    width: 80px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 50px;
+  }
+}
+
+.features-wrapper{
+  width: 100%;
+  padding-top: 50px;
+
+  h1{
+    font-size: 30px;
+  }
+
+  .features{
+    margin-top: 50px;
+
+    .feature-card{
+      display: none;
+    }
+
+    .feature{
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      margin-bottom: 45px;
+
+      img{
+        width: 310px;
+        height: 170px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .title-and-details{
+        width: 690px;
+      }
+    }
+  }
+}
+
+.feature-show{
+  width: 650px;
+
+  h1{
+    width: 660px;
+    margin: 30px auto 15px auto;
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  p{
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 400;
+    margin: 36px 0 0 0;
+  }
+
+  .feature-details{
+    font-size: 14px;
+  }
+
+  .feature-articles{
+    margin-top: 100px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width:768px){
+  .feature-show{
+    width: 310px;
+    margin: 0 auto;
+
+    h1{
+      width: 310px;
+      font-size: 24px;
+      line-height: 36px;
+      margin: 25px auto;
+    }
+
+    p{
+      font-size: 16px;
+      line-height: 30px;
+      margin: 15px 0 0 0;
+    }
+  }
+
+  .features-wrapper{
+    width: 310px;
+    margin: 0 auto;
+
+    h1{
+      font-size: 24px;
+    }
+
+    .features{
+      .feature{
+        display: none;
+      }
+
+      .feature-card{
+        display: block;
+        width: 310px;
+        margin: 25px 0;
+
+        p{
+          font-weight: 700;
+        }
+
+        img{
+          width: 310px;
+          height: 170px;
+          object-fit: cover;
+        }
+
+        span{
+          font-size: 10px;
+          background-color: #f2f2f2;
+          padding: 4px 7px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

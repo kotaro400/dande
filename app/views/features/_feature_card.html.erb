@@ -1,0 +1,10 @@
+<div class="feature-card">
+  <%= image_tag feature.image %>
+  <p><%= feature.title %></p>
+  <% if feature.for_engineer %>
+    <span>Engineer</span>
+  <% end %>
+  <% if feature.for_designer %>
+    <span>Designer</span>
+  <% end %>
+</div>

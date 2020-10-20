@@ -4,6 +4,7 @@ ja:
       article: 記事
       owner: 管理者
       tag: タグ
+      feature: 特集
     attributes:
       article:
         title: タイトル
@@ -16,3 +17,9 @@ ja:
         password: パスワード
       tag:
         name: タグ名
+      feature:
+        title: タイトル
+        details: 詳細説明
+        image: サムネイル
+        for_engineer: For Engineer
+        for_designer: For Designer

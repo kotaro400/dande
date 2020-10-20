@@ -5,6 +5,8 @@ class Article < ApplicationRecord
   has_many :article_tags, dependent: :destroy
   has_many :tags, through: :article_tags
 
+  belongs_to :feature, optional: true
+
   validates :title, presence: true
   validate :image_presence
 

@@ -51,6 +51,11 @@
           <%= render "tags/added_tag", tag: tag %>
         <% end %>
       </div>
+
+      <div class="right-field">
+        <%= form.label "特集" %>
+        <%= form.select :feature, Feature.all.map{|feature| [feature.title, feature.id]}, include_blank: "選択しない"  %>
+      </div>
     </div>
   </div>
 <% end %>

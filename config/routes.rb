@@ -16,11 +16,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :tags do
+  resources :tags, only: [:new, :create] do
     collection do
       get :search
     end
   end
+
+  resources :features
 
   root "articles#index"
 end

@@ -1,0 +1,9 @@
+<div class="feature-show">
+  <h1><%= @feature.title %></h1>
+
+  <p class="feature-details"><%= simple_format(@feature.details) %></p>
+
+  <div class="feature-articles">
+    <%= render "articles/shared/search_results", articles: @feature.articles %>
+  </div>
+</div>
