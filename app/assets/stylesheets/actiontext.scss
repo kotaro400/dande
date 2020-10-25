@@ -146,7 +146,7 @@
   p{
     font-size: 18px;
     line-height: 36px;
-    font-weight: 400;
+    font-weight: 300;
     margin: 36px 0 0 0;
   }
 
@@ -211,7 +211,7 @@
 
 @media screen and (max-width:768px){
   .trix-content{
-    width: 310px;
+    width: calc(100vw - 64px);
 
     h1{
       font-size: 20px;
@@ -231,7 +231,7 @@
 
     a{
       display: block;
-      width: 310px;
+      width: calc(100vw - 64px);
       word-wrap:break-word;
     }
   }

@@ -107,7 +107,7 @@
   }
 
   .features-wrapper{
-    width: 310px;
+    width: calc(100vw - 64px);
     margin: 0 auto;
 
     h1{
@@ -121,7 +121,7 @@
 
       .feature-card{
         display: block;
-        width: 310px;
+        width: calc(100vw - 64px);
         margin: 25px 0;
 
         p{
@@ -129,7 +129,7 @@
         }
 
         img{
-          width: 310px;
+          width: calc(100vw - 64px);
           height: 170px;
           object-fit: cover;
         }
