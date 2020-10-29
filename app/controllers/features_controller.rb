@@ -35,6 +35,14 @@ class FeaturesController < ApplicationController
     end
   end
 
+  def destroy
+    @feature = Feature.find(params[:id])
+    @feature.image.detach if @feature.image.attached?
+    @feature.articles.each{|article| article.update(feature_id: nil)}
+    @feature.destroy
+    redirect_to root_path
+  end
+
   private
   def feature_params
     params.require(:feature).permit(:title, :details, :for_engineer, :for_designer, :image)

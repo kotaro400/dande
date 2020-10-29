@@ -1,3 +1,5 @@
+<% content_for(:title) { '特集編集' } %>
+
 <%= form_with model: @feature, class: "article-form", local: true do |form| %>
   <div class="feature-show">
     <h1><%= @feature.title %></h1>
@@ -17,7 +19,7 @@
         <div class="prev-contents">
           <% if @feature.image.attached? %>
             <div class="prev-content">
-              <%= image_tag @feature.image.variant(resize: "310x170"), class: "prev-image" %>
+              <%= image_tag @feature.image, class: "prev-image" %>
             </div>
           <% end %>
           <%= form.file_field :image, accept: 'image/*', class: "hidden-file" %>

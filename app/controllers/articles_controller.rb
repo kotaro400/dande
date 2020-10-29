@@ -3,7 +3,6 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.on_public
-    @tags = Tag.all
   end
 
   def show
@@ -16,7 +15,6 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    @tags = Tag.all
   end
 
   def create
@@ -32,7 +30,6 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-    @tags = Tag.all
   end
 
   def update
@@ -58,29 +55,9 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    if params[:word]
-      @articles = Article.search(params[:word])
-      @word = params[:word]
-    elsif params[:for_engineer] && params[:for_designer]
-      @articles = Article.for_designer_or_designer
-    elsif params[:for_engineer]
-      @articles = Article.for_engineer
-    elsif params[:for_designer]
-      @articles = Article.for_designer
-    elsif params[:tag]
-      @articles = Tag.find_by(name: params[:tag]).articles
-      @word = params[:tag]
-    else
-      @articles = Article.on_public
-    end
-  end
-
-  def embed
-    @article = Article.find_by(id: params[:id])
-  end
-
-  def preview
-    @article = Article.find_by(id: params[:id])
+    @articles = Article.filter(params)
+    @word = params[:word] if params[:word]
+    @word = params[:tag] if params[:tag]
   end
 
   private

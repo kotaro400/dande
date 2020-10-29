@@ -19,6 +19,7 @@
   <% if controller_name == "features" && action_name == "show" %>
     <div class="edit-links">
       <%= link_to "この特集を編集", edit_feature_path(@feature), data: {turbolinks: false} %>
+      <%= link_to "×", feature_path(@feature), method: :delete, id: "destroy-article-link", data: {confirm: "削除しますか？"} %>
     </div>
   <% end %>
 </header>

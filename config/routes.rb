@@ -9,10 +9,11 @@ Rails.application.routes.draw do
       get :search
       get :draft
     end
+  end
 
+  resources :embedded_articles, only: [:show] do
     member do
       get :embed
-      get :preview
     end
   end
 

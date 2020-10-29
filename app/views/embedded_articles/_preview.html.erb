@@ -2,7 +2,7 @@
   <%= render "articles/shared/article", article: article %>
 
   <div class="preview-links">
-    <%= link_to "追加する", embed_article_path(article), remote: true %>
+    <%= link_to "追加する", embed_embedded_article_path(article.id), remote: true %>
     <span id="preview-back">編集に戻る</span>
   </div>
 </div>

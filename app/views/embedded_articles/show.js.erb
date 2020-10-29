@@ -5,7 +5,7 @@ trixForm.style.display = "none"
 searchForm.style.display = "none"
 
 document.getElementsByClassName("columns-wrapper")[0].insertAdjacentHTML('beforeend',
-  '<%= j(render "articles/shared/preview", article: @article) %>'
+  '<%= j(render "preview", article: @article) %>'
 )
 
 var back = document.getElementById("preview-back")

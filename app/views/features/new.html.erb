@@ -1,3 +1,5 @@
+<% content_for(:title) { '特集作成' } %>
+
 <%= form_with model: @feature, class: "article-form", local: true do |form| %>
   <div class="left-content">
     <p class="new-feature-p">特集を編集する際は、特集に含まれる記事がこちらに表示されます。</p>
@@ -11,7 +13,7 @@
         <div class="prev-contents">
           <% if @feature.image.attached? %>
             <div class="prev-content">
-              <%= image_tag @feature.image.variant(resize: "310x170"), class: "prev-image" %>
+              <%= image_tag @feature.image, class: "prev-image" %>
             </div>
           <% end %>
           <%= form.file_field :image, accept: 'image/*', class: "hidden-file" %>

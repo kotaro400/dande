@@ -4,7 +4,7 @@ res.innerHTML = ""
 
 if (location.pathname === "/articles/new" || location.pathname.match(/\/articles\/.*\/edit/)) {
   res.insertAdjacentHTML('beforeend',
-    '<%= j(render "articles/shared/search_results_for_embed", articles: @articles) %>'
+    '<%= j(render "embedded_articles/search_results", articles: @articles) %>'
   )
 } else {
   res.insertAdjacentHTML('beforeend',

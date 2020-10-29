@@ -1,0 +1,23 @@
+// Place all the styles related to the embedded_articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#preview-article{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+
+  .preview-links{
+    width: 300px;
+    margin-top: 100px;
+
+    a, span{
+      display: block;
+      width: 130px;
+      text-align: center;
+      margin: 30px auto;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+    }
+  }
+}

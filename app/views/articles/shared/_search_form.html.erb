@@ -4,7 +4,7 @@
     <%= form.submit "検索" %>
 
     <div class="top-tags">
-      <% @tags.each do |tag| %>
+      <% Tag.all.each do |tag| %>
         <span class="top-tag">
           <%= link_to tag.name, search_articles_path(tag: tag.name), remote: true %>
         </span>

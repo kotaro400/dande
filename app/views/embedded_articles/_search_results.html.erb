@@ -1,6 +1,6 @@
 <% articles.each do |article| %>
   <div class="res-article">
-    <%= link_to preview_article_path(article), remote: true do %>
+    <%= link_to embedded_article_path(article.id), remote: true do %>
       <%= image_tag article.image %>
     <% end %>
   </div>
