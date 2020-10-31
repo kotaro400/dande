@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    if !current_owner && !@article.public
+    if !current_owner && !@article.open
       redirect_to root_path
       return
     end
@@ -62,6 +62,6 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :content, :for_engineer, :for_designer, :image, :public)
+    params.require(:article).permit(:title, :content, :for_engineer, :for_designer, :image, :open)
   end
 end

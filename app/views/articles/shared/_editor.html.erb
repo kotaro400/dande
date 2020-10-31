@@ -11,17 +11,19 @@
   <div class="right-content">
     <%= render "application/error_messages", resource: article %>
     <div id="default-right-content">
-      <%= form.label :image %>
-      <%= form.label :image, class: "image-label" do %>
-        <div class="prev-contents">
-          <% if article.image.attached? %>
-            <div class="prev-content">
-              <%= image_tag article.image, class: "prev-image" %>
-            </div>
-          <% end %>
-          <%= form.file_field :image, accept: 'image/*', class: "hidden-file" %>
-        </div>
-      <% end %>
+      <div class="right-field">
+        <%= form.label :image %>
+        <%= form.label :image, class: "image-label" do %>
+          <div class="prev-contents">
+            <% if article.image.attached? %>
+              <div class="prev-content">
+                <%= image_tag article.image, class: "prev-image" %>
+              </div>
+            <% end %>
+            <%= form.file_field :image, accept: 'image/*', class: "hidden-file" %>
+          </div>
+        <% end %>
+      </div>
 
       <div class="right-field">
         <%= form.label :title %>
@@ -37,7 +39,7 @@
       </div>
 
       <div class="right-field">
-        <%= form.check_box :public, {}, true, false %>
+        <%= form.check_box :open, {}, true, false %>
         <span>公開する</span>
       </div>
 

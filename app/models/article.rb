@@ -19,11 +19,11 @@ class Article < ApplicationRecord
   }
 
   scope :on_public, -> {
-    where(public: true).sort_from_newest_to_oldest
+    where(open: true).sort_from_newest_to_oldest
   }
 
   scope :draft, -> {
-    where(public: nil).sort_from_newest_to_oldest
+    where.not(open: true).sort_from_newest_to_oldest
   }
 
   scope :for_engineer, -> {
@@ -34,7 +34,7 @@ class Article < ApplicationRecord
     on_public.where(for_designer: true).sort_from_newest_to_oldest
   }
 
-  scope :for_designer_or_designer, -> {
+  scope :for_engineer_or_designer, -> {
     on_public.where(for_designer: true)
       .or(on_public.where(for_engineer: true)).sort_from_newest_to_oldest
   }
@@ -43,13 +43,13 @@ class Article < ApplicationRecord
     if params[:word]
       Article.search(params[:word])
     elsif params[:for_engineer] && params[:for_designer]
-      Article.for_designer_or_designer
+      Article.for_engineer_or_designer
     elsif params[:for_engineer]
       Article.for_engineer
     elsif params[:for_designer]
       Article.for_designer
     elsif params[:tag]
-      Tag.find_by(name: params[:tag]).articles
+      Tag.find_by(name: params[:tag]).articles.on_public
     else
       Article.on_public
     end

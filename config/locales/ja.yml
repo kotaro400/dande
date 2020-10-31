@@ -11,7 +11,7 @@ ja:
         for_engineer: For Engineer
         for_designer: For Designer
         image: サムネイル
-        public: 公開する
+        open: 公開する
       owner:
         uid: コード
         password: パスワード
