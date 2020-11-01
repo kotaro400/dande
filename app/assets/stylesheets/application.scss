@@ -98,9 +98,18 @@ input[type="checkbox"]{
       height: calc(50vw / 3 * 2);
     }
 
-    .first-features{
+    .center{
       width: 100%;
       height: calc(100vw / 3 * 2);
+      order: 1;
+    }
+
+    .left{
+      order: 2;
+    }
+
+    .right{
+      order: 3;
     }
   }
 
