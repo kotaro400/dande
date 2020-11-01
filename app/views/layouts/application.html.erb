@@ -10,7 +10,7 @@
 
       gtag('config', 'G-H05971QB0P');
     </script>
-    
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
@@ -29,7 +29,7 @@
     <meta property="og:description"
       content="<%= content_for?(:description) ? yield(:description) : "" %>" />
     <meta property="og:image"
-      content="<%= content_for?(:image_url) ? yield(:image_url) : full_url('/assets/other/ogp_default.png') %>" />
+      content="<%= content_for?(:image_url) ? full_url(yield(:image_url)) : full_url('/background.png') %>" />
   </head>
 
   <body>
