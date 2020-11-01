@@ -2,6 +2,15 @@
 <html>
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "" %> | DANDE</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H05971QB0P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-H05971QB0P');
+    </script>
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
@@ -13,6 +22,14 @@
     <link rel="stylesheet"
       href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/atom-one-dark.min.css">
     <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : "" %> | DANDE" />
+    <meta property="og:url" content="<%= request.url %>" />
+    <meta property="og:description"
+      content="<%= content_for?(:description) ? yield(:description) : "" %>" />
+    <meta property="og:image"
+      content="<%= content_for?(:image_url) ? yield(:image_url) : full_url('/assets/other/ogp_default.png') %>" />
   </head>
 
   <body>

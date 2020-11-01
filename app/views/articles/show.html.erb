@@ -1,4 +1,6 @@
 <% content_for(:title) { @article.title } %>
+<% content_for(:description) { @article.title } %>
+<% content_for(:image_url) { @article.image_url } %>
 
 <%= render "articles/shared/article", article: @article %>
 

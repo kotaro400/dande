@@ -55,6 +55,11 @@ class Article < ApplicationRecord
     end
   end
 
+  def image_url
+    helpers = Rails.application.routes.url_helpers
+    helpers.rails_representation_url(image.variant({}), only_path: true)
+  end
+
   private
   def image_presence
     if image.attached?
