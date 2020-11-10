@@ -1,6 +1,6 @@
 <header class="owner-header">
   <div class="header-logo">
-    <%= link_to destroy_owner_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
+    <%= link_to destroy_owner_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}, id: "logout-link" do %>
       <%= image_tag "white-logo" %>
     <% end %>
   </div>

@@ -68,19 +68,15 @@
     line-height: 1.5;
   }
 
-  p{
-    font-size: 18px;
-    line-height: 36px;
-    font-weight: 400;
-    margin: 36px 0 0 0;
-  }
-
   .feature-details{
     font-size: 14px;
+    line-height: 36px;
+    font-weight: 400;
+    margin: 16px 0 0 0;
   }
 
   .feature-articles{
-    margin-top: 100px;
+    margin-top: 70px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
