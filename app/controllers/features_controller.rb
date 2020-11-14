@@ -1,5 +1,5 @@
 class FeaturesController < ApplicationController
-  before_action :authenticate_owner!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :redirect_unless_owner, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @features = Feature.sort_from_newest_to_oldest

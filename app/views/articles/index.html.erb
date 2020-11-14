@@ -1,13 +1,15 @@
 <% content_for(:title) { '記事一覧' } %>
 
 <div class="articles">
-  <h2 id="search-word">New</h2>
-  <%= form_with url: search_articles_path, method: :get do |form| %>
-    <%= form.check_box :for_engineer, {checked: true}, true, false %>
-    <%= form.label :for_engineer %>
-    <%= form.check_box :for_designer, {checked: true}, true, false %>
-    <%= form.label :for_designer %>
-    <%= form.submit "表示" %>
+  <h2 id="search-word"><%= @word ? @word: "New" %></h2>
+  <% unless @word %>
+    <%= form_with url: search_articles_path, method: :get do |form| %>
+      <%= form.check_box :for_engineer, {checked: true}, true, false %>
+      <%= form.label :for_engineer %>
+      <%= form.check_box :for_designer, {checked: true}, true, false %>
+      <%= form.label :for_designer %>
+      <%= form.submit "表示" %>
+    <% end %>
   <% end %>
   <div id="res-articles">
     <%= render "articles/shared/search_results", articles: @articles %>
@@ -17,7 +19,7 @@
 <div class="search-content">
   <span id="close-search">×</span>
   <%= image_tag "black-logo", class: "mobile-search-logo" %>
-  <%= render "articles/shared/search_form" %>
+  <%= render "articles/shared/search_form", ajax: false %>
 
   <div class="features-thumbnail">
     <h3>特集記事</h3>

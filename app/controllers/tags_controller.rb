@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  before_action :authenticate_owner!
+  before_action :redirect_unless_owner
 
   def new
     @tag = Tag.new

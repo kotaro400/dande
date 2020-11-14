@@ -9,3 +9,22 @@
     <%= render "articles/shared/search_results", articles: @feature.articles %>
   </div>
 </div>
+
+<div class="search-content">
+  <span id="close-search">×</span>
+  <%= image_tag "black-logo", class: "mobile-search-logo" %>
+  <%= render "articles/shared/search_form", ajax: false %>
+
+  <div class="features-thumbnail">
+    <h3>特集記事</h3>
+    <% Feature.sort_from_newest_to_oldest.each do |feature| %>
+      <div class="feature-thumbnail">
+        <%= link_to feature do %>
+          <%= image_tag feature.image %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= javascript_pack_tag "mobile_menu" %>

@@ -1,5 +1,5 @@
 class EmbeddedArticlesController < ApplicationController
-  before_action :authenticate_owner!, except: [:show, :embed]
+  before_action :redirect_unless_owner, except: [:show, :embed]
 
   def show
     @article = Article.find_by(id: params[:id])
@@ -8,5 +8,5 @@ class EmbeddedArticlesController < ApplicationController
   def embed
     @article = Article.find_by(id: params[:id])
   end
-  
+
 end

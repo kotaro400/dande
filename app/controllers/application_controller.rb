@@ -5,4 +5,9 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  def redirect_unless_owner
+    redirect_to root_path unless owner_signed_in?
+    return
+  end
+
 end

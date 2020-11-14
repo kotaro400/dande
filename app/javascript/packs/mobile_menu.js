@@ -5,12 +5,12 @@ if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
   hamburger.addEventListener("click", function(){
     document.getElementsByClassName("search-content")[0].style.display = "block"
 
-    document.getElementsByClassName("articles")[0].style.display = "none"
+    document.getElementsByClassName("columns-wrapper")[0].children[0].style.display = "none"
   })
 
   closeSearch.addEventListener("click", function(){
     document.getElementsByClassName("search-content")[0].style.display = "none"
 
-    document.getElementsByClassName("articles")[0].style.display = "block"
+    document.getElementsByClassName("columns-wrapper")[0].children[0].style.display = "block"
   })
 }

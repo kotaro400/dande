@@ -14,17 +14,19 @@
   <div class="right-content feature-right-content">
     <%= render "application/error_messages", resource: @feature %>
     <div id="default-right-content">
-      <%= form.label :image %>
-      <%= form.label :image, class: "image-label" do %>
-        <div class="prev-contents">
-          <% if @feature.image.attached? %>
-            <div class="prev-content">
-              <%= image_tag @feature.image, class: "prev-image" %>
-            </div>
-          <% end %>
-          <%= form.file_field :image, accept: 'image/*', class: "hidden-file" %>
-        </div>
-      <% end %>
+      <div class="right-field">
+        <%= form.label :image %>
+        <%= form.label :image, class: "image-label" do %>
+          <div class="prev-contents">
+            <% if @feature.image.attached? %>
+              <div class="prev-content">
+                <%= image_tag @feature.image, class: "prev-image" %>
+              </div>
+            <% end %>
+            <%= form.file_field :image, accept: 'image/*', class: "hidden-file" %>
+          </div>
+        <% end %>
+      </div>
 
       <div class="right-field">
         <%= form.label :title %>

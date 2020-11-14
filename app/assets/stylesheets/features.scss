@@ -83,6 +83,10 @@
   }
 }
 
+.only-mobile{
+  display: none;
+}
+
 @media screen and (max-width:768px){
   .feature-show{
     width: calc(100vw - 64px);
@@ -98,7 +102,6 @@
     p{
       font-size: 16px;
       line-height: 30px;
-      margin: 15px 0 0 0;
     }
   }
 

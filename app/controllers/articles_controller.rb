@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_owner!, except: [:index, :show, :search]
+  before_action :redirect_unless_owner, except: [:index, :show, :search]
 
   def index
     @articles = Article.on_public
@@ -58,6 +58,10 @@ class ArticlesController < ApplicationController
     @articles = Article.filter(params)
     @word = params[:word] if params[:word]
     @word = params[:tag] if params[:tag]
+    respond_to do |format|
+      format.html {render "index"}
+      format.js {render "search"}
+    end
   end
 
   private
