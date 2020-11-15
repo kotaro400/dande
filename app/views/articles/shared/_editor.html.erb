@@ -56,7 +56,11 @@
 
       <div class="right-field">
         <%= form.label "特集" %>
-        <%= form.select :feature, Feature.all.map{|feature| [feature.title, feature.id]}, include_blank: "選択しない"  %>
+        <% if article.feature %>
+          <%= form.select :feature, Feature.all.map{|feature| [feature.title, feature.id]}, selected: article.feature.id  %>
+        <% else %>
+          <%= form.select :feature, Feature.all.map{|feature| [feature.title, feature.id]}, include_blank: "選択しない"  %>
+        <% end %>
       </div>
     </div>
   </div>
