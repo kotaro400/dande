@@ -32,14 +32,14 @@
 
       <div class="right-field">
         <%= form.label "読み手" %>
-        <%= form.check_box :for_engineer, {}, true, false %>
+        <%= form.check_box :for_engineer %>
         <span>For Engineer</span>
-        <%= form.check_box :for_designer, {id: "left-space"}, true, false %>
+        <%= form.check_box :for_designer, id: "left-space" %>
         <span>For Designer</span>
       </div>
 
       <div class="right-field">
-        <%= form.check_box :open, {}, true, false %>
+        <%= form.check_box :open %>
         <span>公開する</span>
       </div>
 

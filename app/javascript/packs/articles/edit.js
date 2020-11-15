@@ -7,4 +7,6 @@ document.querySelectorAll("#article_content div").forEach(element => {
     new_element,
     element
   )
+
+  new_element.getElementsByTagName("br")[0].remove()
 })

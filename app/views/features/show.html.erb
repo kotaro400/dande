@@ -6,7 +6,7 @@
   <%= simple_format(@feature.details, class: "feature-details") %>
 
   <div class="feature-articles">
-    <%= render "articles/shared/search_results", articles: @feature.articles %>
+    <%= render "articles/shared/search_results", articles: @feature.articles.on_public %>
   </div>
 </div>
 

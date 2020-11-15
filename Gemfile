@@ -43,6 +43,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  
+  #capistrano
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
@@ -51,9 +53,12 @@ group :development, :test do
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
   gem 'capistrano-rails-console'
-  
+
+  #rspec
   gem "rspec-rails"
   gem "factory_bot_rails"
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :development do
