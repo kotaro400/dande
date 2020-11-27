@@ -4,8 +4,18 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.on_public
     respond_to do |format|
+      format.html{render "index"}
+
       format.json do
-        word = {en: "article", jp: "記事"}
+        word = [
+          {en: "article", jp: "記事"},
+          {en: "feature", jp: "特集"},
+          {en: "owner", jp: "所有者"},
+          {en: "informative", jp: "有益な"},
+          {en: "nationwide", jp: "全国的な"},
+          {en: "detergent", jp: "洗剤"},
+          {en: "commend", jp: "褒める"}
+        ]
         render json: word
       end
     end
