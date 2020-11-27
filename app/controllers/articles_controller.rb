@@ -3,6 +3,12 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.on_public
+    respond_to do |format|
+      format.json do
+        word = {en: "article", jp: "記事"}
+        render json: word
+      end
+    end
   end
 
   def show
