@@ -20,9 +20,8 @@
     <%= favicon_link_tag '/favicon.ico' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet"
-      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/atom-one-dark.min.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
-
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/atom-one-dark-reasonable.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : "" %> | DANDE" />
     <meta property="og:url" content="<%= request.url %>" />
